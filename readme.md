@@ -1,4 +1,4 @@
-This mod implements a number of fantasy-themed marketplaces where players can post buy and sell offers for various items, allowing for organic market forces to determine the relative values of the resources in a world.
+This mod depends on [commoditymarket](https://github.com/FaceDeer/commoditymarket). It implements a number of fantasy-themed marketplaces where players can post buy and sell offers for various items, allowing for organic market forces to determine the relative values of the resources in a world.
 
 * King's Market - a basic sort of "commoner's marketplace", only open during the day
 * Night Market - the shadier side of commerce, only open during the night
