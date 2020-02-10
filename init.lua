@@ -40,7 +40,7 @@ local usage_help = S("Right-click on this to open the market interface.")
 ------------------------------------------------------------------------------
 -- King's Market
 
-if minetest.settings:get_bool("commoditymarket_enable_kings_market") then
+if minetest.settings:get_bool("commoditymarket_enable_kings_market", true) then
 
 local kings_def = {
 	description = S("King's Market"),
@@ -100,7 +100,7 @@ end
 -------------------------------------------------------------------------------
 -- Night Market
 
-if minetest.settings:get_bool("commoditymarket_enable_night_market") then
+if minetest.settings:get_bool("commoditymarket_enable_night_market", true) then
 local night_def = {
 	description = S("Night Market"),
 	long_description = "When the sun sets and the stalls of the King's Market close, other vendors are just waking up to share their wares. The Night Market is not as voluminous as the King's Market but accepts a wider range of wares. It accepts the same gold coinage of the realm, one thousand coins to the gold ingot.",
@@ -203,6 +203,8 @@ local def = {
 		collision_box = {
 			type = "fixed",
 			fixed = {
+				-- Note: this oversized nodebox may cause slight problems when you stand on it.
+				-- https://github.com/minetest/minetest/issues/9322
 				{-0.75, -0.5, -1.25, 0.75, 1.5, 1.25},
 			},
 		},
@@ -454,7 +456,7 @@ end
 
 -------------------------------------------------------------------------------
 -- "Goblin Exchange"
-if minetest.settings:get_bool("commoditymarket_enable_goblin_market") then
+if minetest.settings:get_bool("commoditymarket_enable_goblin_market", true) then
 
 local goblin_def = {
 	description = S("Goblin Exchange"),
@@ -497,7 +499,7 @@ minetest.register_node("commoditymarket_fantasy:goblin_market", {
 end
 --------------------------------------------------------------------------------
 
-if minetest.settings:get_bool("commoditymarket_enable_under_market") then
+if minetest.settings:get_bool("commoditymarket_enable_under_market", true) then
 local undermarket_def = {
 	description = S("Undermarket"),
 	long_description = S("Deep in the bowels of the world, below even the goblin-infested warrens and ancient delvings of the dwarves, dark and mysterious beings once dwelled. A few still linger to this day, and facilitate barter for those brave souls willing to travel in their lost realms. The Undermarket uses Mese chips ('₥') as a currency - twenty chips to the Mese fragment. Though traders are loathe to physically break Mese crystals up into units that small, as it renders it useless for other purposes."),
