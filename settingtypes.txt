@@ -12,6 +12,9 @@ commoditymarket_protect_caravan_market (Protect permanent Caravan node) bool tru
 commoditymarket_protect_goblin_market (Protect Goblin Market node) bool true
 commoditymarket_protect_under_market (Protect Undermarket node) bool true
 
+[Currency denominations]
+commoditymarket_coins_per_ingot (Coins per ingot) int 1000
+
 [Dungeon market generation]
 commoditymarket_goblin_market_dungeon_prob (Goblin market probability per dungeon mapblock) float 0.25 0 1
 commoditymarket_goblin_market_dungeon_max (Upper y limit of goblin markets) int 100

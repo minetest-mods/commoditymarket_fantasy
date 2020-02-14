@@ -18,16 +18,18 @@ local S, NS = dofile(modpath.."/intllib.lua")
 
 dofile(modpath.."/mapgen_dungeon_markets.lua")
 
+local coins_per_ingot = math.floor(tonumber(minetest.settings:get("commoditymarket_coins_per_ingot")) or 1000)
+
 -- Only register gold coins once, if required
 local gold_coins_registered = false
 local register_gold_coins = function()
 	if not gold_coins_registered then
 		minetest.register_craftitem("commoditymarket_fantasy:gold_coins", {
 			description = S("Gold Coins"),
-			_doc_items_longdesc = S("A gold ingot is far too valuable to use as a basic unit of value, so it has become common practice to divide the standard gold bar into one thousand small disks to make trade easier."),
-			_doc_items_usagehelp = S("Gold coins can be deposited and withdrawn from markets that accept them as currency. These markets can make change if you have a thousand coins and would like them back in ingot form again."),
+			_doc_items_longdesc = S("A gold ingot is far too valuable to use as a basic unit of value, so it has become common practice to divide the standard gold bar into @1 small disks to make trade easier.", coins_per_ingot),
+			_doc_items_usagehelp = S("Gold coins can be deposited and withdrawn from markets that accept them as currency. These markets can make change if you have @1 coins and would like them back in ingot form again.", coins_per_ingot),
 			inventory_image = "commoditymarket_gold_coins.png",
-			stack_max = 1000,
+			stack_max = coins_per_ingot,
 		})
 		gold_coins_registered = true		
 	end
@@ -44,9 +46,9 @@ if minetest.settings:get_bool("commoditymarket_enable_kings_market", true) then
 
 local kings_def = {
 	description = S("King's Market"),
-	long_description = S("The largest and most accessible market for the common man, the King's Market uses gold coins as its medium of exchange (or the equivalent in gold ingots - 1000 coins to the ingot). However, as a respectable institution of the surface world, the King's Market operates only during the hours of daylight. The purchase and sale of swords and explosives is prohibited in the King's Market. Gold coins are represented by a '☼' symbol."),
+	long_description = S("The largest and most accessible market for the common man, the King's Market uses gold coins as its medium of exchange (or the equivalent in gold ingots - @1 coins to the ingot). However, as a respectable institution of the surface world, the King's Market operates only during the hours of daylight. The purchase and sale of swords and explosives is prohibited in the King's Market. Gold coins are represented by a '☼' symbol.", coins_per_ingot),
 	currency = {
-		["default:gold_ingot"] = 1000,
+		["default:gold_ingot"] = coins_per_ingot,
 		["commoditymarket_fantasy:gold_coins"] = 1
 	},
 	currency_symbol = "☼", -- "\u{263C}" Alchemical symbol for gold
@@ -103,9 +105,9 @@ end
 if minetest.settings:get_bool("commoditymarket_enable_night_market", true) then
 local night_def = {
 	description = S("Night Market"),
-	long_description = "When the sun sets and the stalls of the King's Market close, other vendors are just waking up to share their wares. The Night Market is not as voluminous as the King's Market but accepts a wider range of wares. It accepts the same gold coinage of the realm, one thousand coins to the gold ingot.",
+	long_description = S("When the sun sets and the stalls of the King's Market close, other vendors are just waking up to share their wares. The Night Market is not as voluminous as the King's Market but accepts a wider range of wares. It accepts the same gold coinage of the realm, @1 coins to the gold ingot.", coins_per_ingot),
 	currency = {
-		["default:gold_ingot"] = 1000,
+		["default:gold_ingot"] = coins_per_ingot,
 		["commoditymarket_fantasy:gold_coins"] = 1
 	},
 	currency_symbol = "☼", --"\u{263C}"
@@ -161,9 +163,9 @@ local dwell_time = 600 -- caravan leaves ten minutes after last usage
 
 local caravan_def = {
 	description = S("Trader's Caravan"),
-	long_description = S("Unlike most markets that have well-known fixed locations that travelers congregate to, the network of Trader's Caravans is fluid and dynamic in their locations. A Trader's Caravan can show up anywhere, make modest trades, and then be gone the next time you visit them. These caravans accept gold and gold coins as a currency (one gold ingot to one thousand gold coins exchange rate). Any reasonably-wealthy person can create a signpost marking a location where Trader's Caravans will make a stop."),
+	long_description = S("Unlike most markets that have well-known fixed locations that travelers congregate to, the network of Trader's Caravans is fluid and dynamic in their locations. A Trader's Caravan can show up anywhere, make modest trades, and then be gone the next time you visit them. These caravans accept gold and gold coins as a currency (one gold ingot to @1 gold coins exchange rate). Any reasonably-wealthy person can create a signpost marking a location where Trader's Caravans will make a stop.", coins_per_ingot),
 	currency = {
-		["default:gold_ingot"] = 1000,
+		["default:gold_ingot"] = coins_per_ingot,
 		["commoditymarket_fantasy:gold_coins"] = 1
 	},
 	currency_symbol = "☼", --"\u{263C}"
