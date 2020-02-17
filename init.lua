@@ -13,8 +13,7 @@ minetest.register_alias("commoditymarket:caravan_market_4",          "commoditym
 minetest.register_alias("commoditymarket:caravan_market_5",          "commoditymarket_fantasy:caravan_market_5")
 minetest.register_alias("commoditymarket:caravan_market_permanent",  "commoditymarket_fantasy:caravan_market_permanent")
 
--- internationalization boilerplate
-local S, NS = dofile(modpath.."/intllib.lua")
+local S = minetest.get_translator(minetest.get_current_modname())
 
 dofile(modpath.."/mapgen_dungeon_markets.lua")
 
@@ -504,7 +503,7 @@ end
 if minetest.settings:get_bool("commoditymarket_enable_under_market", true) then
 local undermarket_def = {
 	description = S("Undermarket"),
-	long_description = S("Deep in the bowels of the world, below even the goblin-infested warrens and ancient delvings of the dwarves, dark and mysterious beings once dwelled. A few still linger to this day, and facilitate barter for those brave souls willing to travel in their lost realms. The Undermarket uses Mese chips ('₥') as a currency - twenty chips to the Mese fragment. Though traders are loathe to physically break Mese crystals up into units that small, as it renders it useless for other purposes."),
+	long_description = S("Deep in the bowels of the world, below even the goblin-infested warrens and ancient delvings of the dwarves, dark and mysterious beings once dwelt. A few still linger to this day, and facilitate barter for those brave souls willing to travel in their lost realms. The Undermarket uses Mese chips ('₥') as a currency - twenty chips to the Mese fragment. Though traders are loathe to physically break Mese crystals up into units that small, as it renders it useless for other purposes."),
 	currency = {
 		["default:mese"] = 9*9*20,
 		["default:mese_crystal"] = 9*20,
