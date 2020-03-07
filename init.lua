@@ -204,15 +204,15 @@ local def = {
 		collision_box = {
 			type = "fixed",
 			fixed = {
-				-- Note: this oversized nodebox may cause slight problems when you stand on it.
+				-- Note: this nodebox should have a height of 1.5, but using 95/64 as a workaround for
 				-- https://github.com/minetest/minetest/issues/9322
-				{-0.75, -0.5, -1.25, 0.75, 1.5, 1.25},
+				{-0.75, -0.5, -1.25, 0.75, 95/64, 1.25},
 			},
 		},
 		selection_box = {
 			type = "fixed",
 			fixed = {
-				{-0.75, -0.5, -1.25, 0.75, 1.5, 1.25},
+				{-0.75, -0.5, -1.25, 0.75, 95/64, 1.25},
 			},
 		},
 	
@@ -319,13 +319,15 @@ minetest.register_node("commoditymarket_fantasy:caravan_market_permanent", {
     collision_box = {
 		type = "fixed",
         fixed = {
-            {-0.75, -0.5, -1.25, 0.75, 1.5, 1.25},
+			-- Note: this nodebox should have a height of 1.5, but using 95/64 as a workaround for
+			-- https://github.com/minetest/minetest/issues/9322
+            {-0.75, -0.5, -1.25, 0.75, 95/64, 1.25},
         },
     },
 	selection_box = {
 		type = "fixed",
         fixed = {
-            {-0.75, -0.5, -1.25, 0.75, 1.5, 1.25},
+            {-0.75, -0.5, -1.25, 0.75, 95/64, 1.25},
         },
     },
 
