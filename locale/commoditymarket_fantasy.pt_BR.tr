@@ -1,0 +1,54 @@
+# textdomain: commoditymarket_fantasy
+
+
+### caravan_markets.lua ###
+
+Caravan summoned@nETA: @1 seconds.=Caravana convocada@nTempo estimado para chegada: @1 segundos.
+
+Indicated parking area isn't suitable.@nA 5x3 open space with solid ground@nis required for a caravan.=O local de estacionamento indicado não é adequado.@nÉ preciso uma area 5x3 com terreno solido.
+
+Right-click to summon a trader's caravan=Use o clique direito para convocar a caravana
+
+The trader's caravan requires a suitable open space next to the trading post for it to arrive, and takes some time to arrive after being summoned. The post gives a countdown to the caravan's arrival when moused over.=A caravana do comerciante requer um espaço aberto adequado ao lado da feitoria para chegar, e leva algum tempo para chegar depois de ser convocada. O poste realiza uma contagem regressiva para a chegada da caravana quando você apontar para ele.
+
+This post signals passing caravan traders that customers can be found here, and signals to customers that caravan traders can be found here. If no caravan is present, right-click to summon one.=Esta postagem sinaliza aos comerciantes de caravana que estão passando que os clientes podem ser encontrados aqui e aos clientes que os comerciantes de caravanas podem ser encontrados aqui. Se nenhuma caravana estiver presente, clique com o botão direito para convocar uma.
+
+Trader's Caravan=Caravana Trader's
+Trading Post=Poste de Nogociações
+
+Unlike most markets that have well-known fixed locations that travelers congregate to, the network of Trader's Caravans is fluid and dynamic in their locations. A Trader's Caravan can show up anywhere, make modest trades, and then be gone the next time you visit them. These caravans accept gold and gold coins as a currency (one gold ingot to @1 gold coins exchange rate). Any reasonably-wealthy person can create a signpost marking a location where Trader's Caravans will make a stop.=Ao contrário da maioria dos mercados que possuem localizações fixas conhecidas para as quais os viajantes se reúnem, a rede de caravanas da Trader's é fluida e dinâmica em suas localizações. A Caravana Trader's pode aparecer em qualquer lugar, fazer negócios modestos e partir na próxima vez que você visitá-los. Essas caravanas aceitam moedas de ouro e ouro como moeda de troca (taxa de câmbio de um lingote de ouro para 1 moeda de ouro). Qualquer pessoa razoavelmente rica pode criar uma placa de sinalização marcando o local onde as caravanas da Trader's farão uma parada.
+
+
+### dungeon_markets.lua ###
+
+Goblin Exchange=Corretora Goblin
+
+One does not usually associate Goblins with the sort of sophistication that running a market requires. Usually one just associates Goblins with savagery and violence. But they understand the principle of tit-for-tat exchange, and if approached correctly they actually respect the concepts of ownership and debt. However, for some peculiar reason they understand this concept in the context of coal lumps. Goblins deal in the standard coal lump as their form of currency, conceptually divided into 100 coal centilumps (though Goblin brokers prefer to "keep the change" when giving back actual coal lumps).=Normalmente não se associa goblins com o tipo de sofisticação que a administração de um mercado exige. Normalmente, apenas associamos goblins com selvageria e violência. Mas eles entendem o princípio da troca na mesma moeda e, se bem tratados, eles realmente respeitam os conceitos de propriedade e dívida. No entanto, por alguma razão peculiar, eles entendem esse conceito no contexto de pedaços de carvão. Os goblins negociam com o pedaço de carvão padrão como sua forma de moeda, conceitualmente dividida em 100 centicarvões de carvão (embora os corretores Goblin prefiram "ficar com o troco" ao devolver pedaços de carvão restantes).
+
+Undermarket=Submercado
+
+### init.lua ###
+
+A gold ingot is far too valuable to use as a basic unit of value, so it has become common practice to divide the standard gold bar into @1 small disks to make trade easier.=Um lingote de ouro é valioso demais para ser usado como unidade básica de valor, portanto, tornou-se prática comum dividir a barra de ouro padrão em discos pequenos para facilitar o comércio.
+
+Deep in the bowels of the world, below even the goblin-infested warrens and ancient delvings of the dwarves, dark and mysterious beings once dwelt. A few still linger to this day, and facilitate barter for those brave souls willing to travel in their lost realms. The Undermarket uses Mese chips ('₥') as a currency - twenty chips to the Mese fragment. Though traders are loathe to physically break Mese crystals up into units that small, as it renders it useless for other purposes.=Nas profundezas do mundo, abaixo até mesmo das infestações de goblins e antigas escavações de anões, seres escuros e misteriosos habitam. Alguns ainda perduram até hoje e facilitam a troca com aquelas almas corajosas que desejam viajar em seus reinos perdidos. O Undermarket usa chips Mese ('₥') como moeda - vinte chips para o fragmento Mese. Embora os comerciantes não gostem de quebrar fisicamente os cristais de Mese em unidades tão pequenas, isso os torna inúteis para outros fins.
+
+Deep in the bowels of the world, below even the goblin-infested warrens and ancient delvings of the dwarves, dark and mysterious beings once dwelt. A few still linger to this day, and facilitate barter for those brave souls willing to travel in their lost realms. The Undermarket uses Redstone ('₨') as a currency.=Nas profundezas do mundo, abaixo até mesmo das infestações de goblins e antigas escavações de anões, seres escuros e misteriosos habitam. Alguns ainda perduram até hoje e facilitam a troca com aquelas almas corajosas que desejam viajar em seus reinos perdidos. O Undermarket usa Redstone ('₨') como moeda.
+
+Gold Coins=Moedas de Ouro
+
+Gold coins can be deposited and withdrawn from markets that accept them as currency. These markets can make change if you have @1 coins and would like them back in ingot form again.=As moedas de ouro podem ser depositadas e retiradas de mercados que as aceitam como moeda. Esses mercados podem fazer o câmbio de volta se você tiver @1 moedas e as quiser de volta na forma de lingote.
+
+Right-click on this to open the market interface.=Use o clique direito para abrir a interface do mercado.
+
+### village_markets.lua ###
+
+At this time of day the King's Market is closed.=A esta hora do dia, o Mercado do Rei está fechado.
+At this time of day the Night Market is closed.=A esta hora do dia, o Mercado Noturno está fechado.
+King's Market=Mercado do Rei
+Night Market=Mercado Noturno
+
+The largest and most accessible market for the common man, the King's Market uses gold coins as its medium of exchange (or the equivalent in gold ingots - @1 coins to the ingot). However, as a respectable institution of the surface world, the King's Market operates only during the hours of daylight. Gold coins are represented by a '☼' symbol.=Maior e mais acessível mercado para o homem comum, o Mercado do Rei usa moedas de ouro como meio de troca (ou o equivalente em lingotes de ouro - @1 moedas por lingote). No entanto, como uma instituição respeitável do mundo da superfície, o Mercado do Rei funciona apenas durante o dia. As moedas de ouro são representadas por um símbolo '☼'.
+
+When the sun sets and the stalls of the King's Market close, other vendors are just waking up to share their wares. The Night Market is not as voluminous as the King's Market but sometimes it's the only option. It accepts the same gold coinage of the realm, @1 coins to the gold ingot.=Quando o sol se põe e as barracas do Mercado do Rei fecham, outros vendedores estão acordando para negociar seus produtos. O Mercado Noturno não é tão volumoso quanto o Mercado do Rei, mas às vezes é a única opção. Aceita a mesma cunhagem de ouro do reino, @1 moedas por lingote de ouro.
+
