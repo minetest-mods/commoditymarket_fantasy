@@ -1,5 +1,8 @@
-local goblin_enabled = minetest.settings:get_bool("commoditymarket_enable_goblin_market")
-local under_enabled = minetest.settings:get_bool("commoditymarket_enable_under_market")
+local S = commoditymarket_fantasy.S
+local modpath = minetest.get_modpath(minetest.get_current_modname())
+
+local goblin_enabled = minetest.settings:get_bool("commoditymarket_enable_goblin_market", true)
+local under_enabled = minetest.settings:get_bool("commoditymarket_enable_under_market", true)
 local goblin_prob = tonumber(minetest.settings:get("commoditymarket_goblin_market_dungeon_prob")) or 0.25
 local under_prob = tonumber(minetest.settings:get("commoditymarket_under_market_dungeon_prob")) or 0.1
 
@@ -25,7 +28,61 @@ if not (gen_goblin or gen_under) then
 	return
 end
 
+-------------------------------------------------------------
+-- Names and waypoints
 
+local named_waypoints_modpath = minetest.get_modpath("named_waypoints")
+local name_generator_modpath = minetest.get_modpath("name_generator")
+
+local goblin_named = minetest.settings:get_bool("commoditymarket_name_goblin_markets", true) and named_waypoints_modpath
+local under_named = minetest.settings:get_bool("commoditymarket_name_under_markets", true) and named_waypoints_modpath
+
+local item_required = nil
+if minetest.settings:get_bool("commoditymarket_hud_requires_item", true) then
+	item_required = minetest.settings:get("commoditymarket_hud_item_required")
+	if item_required == nil or item_required == "" then
+		item_required = "map:mapping_kit"
+	end
+end
+
+if goblin_named then
+	local goblin_waypoint_def = {
+		default_name = S("A Goblin Exchange"),
+		default_color = 0x00A86B, -- jade green
+		discovery_volume_radius = 5,
+		visibility_requires_item = item_required,
+	}
+	if minetest.settings:get_bool("commoditymarket_show_goblin_markets_in_hud", true) then
+		goblin_waypoint_def.visibility_volume_radius = tonumber(minetest.settings:get("commoditymarket_hud_visibility_range")) or 250
+		goblin_waypoint_def.on_discovery = named_waypoints.default_discovery_popup
+	end
+	
+	named_waypoints.register_named_waypoints("goblin_markets", goblin_waypoint_def)
+	
+	if name_generator_modpath then
+		name_generator.parse_lines(io.lines(modpath.."/goblin_markets.cfg"))
+	end
+end
+
+if under_named then
+	local under_waypoint_def = {
+		default_name = S("An Undermarket"),
+		default_color = 0xB33000, -- darkened orangered
+		discovery_volume_radius = 5,
+		visibility_requires_item = item_required,
+	}
+	if minetest.settings:get_bool("commoditymarket_show_under_markets_in_hud", true) then
+		under_waypoint_def.visibility_volume_radius = tonumber(minetest.settings:get("commoditymarket_hud_visibility_range")) or 250
+		under_waypoint_def.on_discovery = named_waypoints.default_discovery_popup
+	end
+	
+	named_waypoints.register_named_waypoints("under_markets", under_waypoint_def)
+	
+	if name_generator_modpath then
+		name_generator.parse_lines(io.lines(modpath.."/under_markets.cfg"))
+	end
+
+end
 -------------------------------------------------------
 -- The following is shamelessly copied from dungeon_loot and tweaked for placing markets instead of chests
 --Licensed under the MIT License (MIT) Copyright (C) 2017 sfan5
@@ -125,6 +182,14 @@ minetest.register_on_generated(function(minp, maxp, blockseed)
 		if minetest.get_node(under_loc).name == "air"
 			and is_wall(vector.subtract(under_loc, {x=0, y=1, z=0})) then
 			minetest.add_node(under_loc, {name="commoditymarket:under_market"})
+			
+			local name = nil
+			if under_named then
+				if name_generator_modpath then
+					name = name_generator.generate("under_markets")
+				end
+				named_waypoints.add_waypoint("under_markets", under_loc, {name=name})
+			end			
 		end
 	end
 
@@ -148,6 +213,14 @@ minetest.register_on_generated(function(minp, maxp, blockseed)
 			-- make it face inwards to the room
 			local facedir = minetest.dir_to_facedir(vector.multiply(wall.facing, -1))
 			minetest.add_node(marketpos, {name = "commoditymarket:goblin_market", param2 = facedir})
+			
+			local name = nil
+			if goblin_named then
+				if name_generator_modpath then
+					name = name_generator.generate("goblin_markets")
+				end
+				named_waypoints.add_waypoint("goblin_markets", marketpos, {name=name})
+			end
 		end
 	end
 end)

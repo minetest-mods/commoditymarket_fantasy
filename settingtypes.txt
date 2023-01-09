@@ -22,3 +22,15 @@ commoditymarket_goblin_market_dungeon_min (Lower y limit of goblin markets) int 
 commoditymarket_under_market_dungeon_prob (Undermarket probability per dungeon mapblock) float 0.1 0 1
 commoditymarket_under_market_dungeon_max (Upper y limit of undermarkets) int -500
 commoditymarket_under_market_dungeon_min (Lower y limit of undermarkets) int -31000
+
+[Dungeon market HUD markers]
+commoditymarket_name_goblin_markets (Give names to goblin markets) bool true
+commoditymarket_name_under_markets (Give names to undermarkets) bool true
+commoditymarket_show_goblin_markets_in_hud (Show Goblin markets in HUD) bool true
+commoditymarket_show_under_markets_in_hud (Show Undermarkets in HUD) bool true
+commoditymarket_hud_requires_item (Require an item to view waypoints) bool true
+#Players can still discover the locations of markets without this, but waypoints
+#will only be visible in their hud if they have this item in their inventory. You can also
+#specify "group:groupname" here. Leave it blank to default to map:mapping_kit.
+commoditymarket_hud_item_required (Specify the item or group required) string map:mapping_kit
+commoditymarket_hud_visibility_range (Dungeon market HUD visibility range) int 250

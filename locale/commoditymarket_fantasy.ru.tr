@@ -42,6 +42,13 @@ Gold coins can be deposited and withdrawn from markets that accept them as curre
 
 Right-click on this to open the market interface.=Кликните правой кнопкой мыши на это, чтобы открыть рыночный интерфейс.
 
+### mapgen_dungeon_markets.lua ###
+
+#WARNING: AUTOTRANSLATED BY GOOGLE TRANSLATE
+A Goblin Exchange=Обмен гоблинов
+#WARNING: AUTOTRANSLATED BY GOOGLE TRANSLATE
+An Undermarket=Подрынок
+
 ### village_markets.lua ###
 
 At this time of day the King's Market is closed.=В это время дня Королевский рынок закрыт.
