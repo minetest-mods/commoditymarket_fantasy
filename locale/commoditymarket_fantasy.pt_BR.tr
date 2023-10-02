@@ -16,7 +16,7 @@ This post signals passing caravan traders that customers can be found here, and 
 Trader's Caravan=Caravana Trader's
 Trading Post=Poste de Nogociações
 
-Unlike most markets that have well-known fixed locations that travelers congregate to, the network of Trader's Caravans is fluid and dynamic in their locations. A Trader's Caravan can show up anywhere, make modest trades, and then be gone the next time you visit them. These caravans accept gold and gold coins as a currency (one gold ingot to @1 gold coins exchange rate). Any reasonably-wealthy person can create a signpost marking a location where Trader's Caravans will make a stop.=Ao contrário da maioria dos mercados que possuem localizações fixas conhecidas para as quais os viajantes se reúnem, a rede de caravanas da Trader's é fluida e dinâmica em suas localizações. A Caravana Trader's pode aparecer em qualquer lugar, fazer negócios modestos e partir na próxima vez que você visitá-los. Essas caravanas aceitam moedas de ouro e ouro como moeda de troca (taxa de câmbio de um lingote de ouro para 1 moeda de ouro). Qualquer pessoa razoavelmente rica pode criar uma placa de sinalização marcando o local onde as caravanas da Trader's farão uma parada.
+Unlike most markets that have well-known fixed locations that travellers congregate to, the network of Trader's Caravans is fluid and dynamic in their locations. A Trader's Caravan can show up anywhere, make modest trades, and then be gone the next time you visit them. These caravans accept gold and gold coins as a currency (one gold ingot to @1 gold coins exchange rate). Any reasonably-wealthy person can create a signpost marking a location where Trader's Caravans will make a stop.=Ao contrário da maioria dos mercados que possuem localizações fixas conhecidas para as quais os viajantes se reúnem, a rede de caravanas da Trader's é fluida e dinâmica em suas localizações. A Caravana Trader's pode aparecer em qualquer lugar, fazer negócios modestos e partir na próxima vez que você visitá-los. Essas caravanas aceitam moedas de ouro e ouro como moeda de troca (taxa de câmbio de um lingote de ouro para 1 moeda de ouro). Qualquer pessoa razoavelmente rica pode criar uma placa de sinalização marcando o local onde as caravanas da Trader's farão uma parada.
 
 
 ### dungeon_markets.lua ###
@@ -40,6 +40,11 @@ Gold Coins=Moedas de Ouro
 Gold coins can be deposited and withdrawn from markets that accept them as currency. These markets can make change if you have @1 coins and would like them back in ingot form again.=As moedas de ouro podem ser depositadas e retiradas de mercados que as aceitam como moeda. Esses mercados podem fazer o câmbio de volta se você tiver @1 moedas e as quiser de volta na forma de lingote.
 
 Right-click on this to open the market interface.=Use o clique direito para abrir a interface do mercado.
+
+### mapgen_dungeon_markets.lua ###
+
+A Goblin Exchange=
+An Undermarket=
 
 ### village_markets.lua ###
 

@@ -18,7 +18,7 @@ local dwell_time = 600 -- caravan leaves ten minutes after last usage
 
 local caravan_def = {
 	description = S("Trader's Caravan"),
-	long_description = S("Unlike most markets that have well-known fixed locations that travelers congregate to, the network of Trader's Caravans is fluid and dynamic in their locations. A Trader's Caravan can show up anywhere, make modest trades, and then be gone the next time you visit them. These caravans accept gold and gold coins as a currency (one gold ingot to @1 gold coins exchange rate). Any reasonably-wealthy person can create a signpost marking a location where Trader's Caravans will make a stop.", coins_per_ingot),
+	long_description = S("Unlike most markets that have well-known fixed locations that travellers congregate to, the network of Trader's Caravans is fluid and dynamic in their locations. A Trader's Caravan can show up anywhere, make modest trades, and then be gone the next time you visit them. These caravans accept gold and gold coins as a currency (one gold ingot to @1 gold coins exchange rate). Any reasonably-wealthy person can create a signpost marking a location where Trader's Caravans will make a stop.", coins_per_ingot),
 	currency = gold_currency,
 	currency_symbol = "☼", --"\u{263C}"
 	inventory_limit = 1000,
